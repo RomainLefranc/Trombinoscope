@@ -17,15 +17,21 @@
     <body>
         <?php
             date_default_timezone_set('Indian/Reunion');
-            $dateLocale = date("d/m/Y h:i:s");
-            $dateServeur = getdate();
-            $date = $dateServeur['mday'];
-            $month = $dateServeur['mon'];
-            $year = $dateServeur['year'];
-            $hour = $dateServeur['hours'];
-            $min = $dateServeur['minutes'];
-            $sec = $dateServeur['seconds'];
+            setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+            $heurelocale = strftime("%H");
+            switch ($heurelocale) {
+                case $heurelocale >= 14 && $heurelocale <= 18:
+                    $messageAccueil = "Bon après midi";
+                    break;
+                
+                case $heurelocale < 14:
+                    $messageAccueil = "Bonjour";
+                    break;
 
+                case $heurelocale > 18:
+                    $messageAccueil = "Bonsoir";
+                    break;
+            }
             include "modele/navbar.php";
             include "modele/header.php";
             include "modele/connexion.php";
