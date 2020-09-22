@@ -12,31 +12,20 @@
         <link href="css/business-frontpage.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/style.css">
+        <script src="vendor/jquery/jquery.js"></script>
+        <script type="text/javascript" src="./js/date.js"></script>
 
     </head>
     <body>
         <?php
-            date_default_timezone_set('Indian/Reunion');
             setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-            $heurelocale = strftime("%H");
-            switch ($heurelocale) {
-                case $heurelocale >= 14 && $heurelocale <= 18:
-                    $messageAccueil = "Bon après midi";
-                    break;
-                
-                case $heurelocale < 14:
-                    $messageAccueil = "Bonjour";
-                    break;
-
-                case $heurelocale > 18:
-                    $messageAccueil = "Bonsoir";
-                    break;
-            }
             include "modele/navbar.php";
             include "modele/header.php";
             include "modele/connexion.php";
             include "modele/news.php";
             include "modele/footer.php";
         ?> 
+
     </body>
+
 </html>

@@ -1,7 +1,7 @@
 <div class="col-md-4 mb-5">
     <form action="trombi.php" method="POST" class=" p-4 rounded bg-light">
         <div class="form-group">
-            <h1>Connexion</h1>
+            <h2>Connexion</h2>
             <label for="id">Adresse mail</label>
             <input type="email" class="form-control" id="id" aria-describedby="emailHelp" placeholder="Saisir adresse mail" required>
         </div>
