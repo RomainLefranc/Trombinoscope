@@ -1,5 +1,5 @@
 <div class="col-md-4 mb-5">
-    <form action="indexConnecte.html" method="POST" class="border border-primary p-4 mb-5 rounded bg-light">
+    <form action="trombi.php" method="POST" class=" p-4 rounded bg-light">
         <div class="form-group">
             <h1>Connexion</h1>
             <label for="id">Adresse mail</label>

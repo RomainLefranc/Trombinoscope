@@ -16,11 +16,14 @@
     </head>
     <body>
         <?php
-        include "modele/navbar.php";
-        include "modele/header.php";
-        include "modele/connexion.php";
-        include "modele/news.php";
-        include "modele/footer.php";
+            echo var_dump($_SERVER);
+            $dateLocale = date("d/m/Y");
+
+            include "modele/navbar.php";
+            include "modele/header.php";
+            include "modele/connexion.php";
+            include "modele/news.php";
+            include "modele/footer.php";
         ?> 
     </body>
 </html>
