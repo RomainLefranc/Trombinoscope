@@ -1,3 +1,21 @@
+<?php
+    include "data.php";
+    $login = "";
+    $mdp = "";
+    $connexion = false;
+    if (isset($_POST["login"]) && isset($_POST["mdp"])) {
+        $login = $_POST["login"];
+        $mdp = $_POST["mdp"];
+        foreach ($donneeConnexion as $value) {
+            if ($login == $value[0] && $mdp == $value[1]) {
+                header('Location: vue/trombi.php');
+                exit;
+                $connexion = true;
+                $_SESSION["user"] = $login;
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
