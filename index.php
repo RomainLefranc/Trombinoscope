@@ -16,8 +16,15 @@
     </head>
     <body>
         <?php
-            echo var_dump($_SERVER);
-            $dateLocale = date("d/m/Y");
+            date_default_timezone_set('Indian/Reunion');
+            $dateLocale = date("d/m/Y h:i:s");
+            $dateServeur = getdate();
+            $date = $dateServeur['mday'];
+            $month = $dateServeur['mon'];
+            $year = $dateServeur['year'];
+            $hour = $dateServeur['hours'];
+            $min = $dateServeur['minutes'];
+            $sec = $dateServeur['seconds'];
 
             include "modele/navbar.php";
             include "modele/header.php";
