@@ -1,6 +1,7 @@
 <?php
     include "../controleur/session.php";
     include "../controleur/listesection.php";
+    include "../controleur/initiale.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,8 +17,15 @@
     </head>
 <body>
     <?php
-        include "../modele/trombi_header.php";
-        include "../modele/trombi_listeSections.php";
+        include "../modele/trombi_header.php";  
+    ?>
+    <div class="container">
+        <?php
+            include "../modele/trombi_listeSections.php";
+            include "../modele/trombi_zoneInitiale.php";
+        ?>
+    </div>
+    <?php
         include "../modele/footer_fixed.php";
     ?>
 </body>
