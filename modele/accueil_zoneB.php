@@ -11,6 +11,11 @@
             <label for="mdp">Mot de passe</label>
             <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mot de passe"  required>
             <?php
+            if (isset($_POST["erreur"] )) {
+                if ($_POST["erreur"] == 1) {
+                    echo '<p class="text-danger text-center mt-2">Mot de passe ou identifiant invalide</p>';
+                }
+            }
             ?>
         </div>
         <button type="submit" class="btn btn-primary">Connexion</button>

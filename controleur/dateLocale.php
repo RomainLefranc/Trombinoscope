@@ -1,3 +1,4 @@
+<script>
 $(function () {
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     var date = new Date
@@ -10,10 +11,16 @@ $(function () {
     } else {
         msg = "Bonsoir";
     }
-    var heure = `${date.getHours()}:${date.getMinutes()}`
+    function Twodigits(date) {
+        if (date < 10) {
+            return "0" + date;
+        } else {
+            return date
+        }
+    }
+    var heure = `${Twodigits(date.getHours())}:${Twodigits(date.getMinutes())}`
     date = date.toLocaleDateString('fr-FR',options)
     $('.date').html(`${date} et il est ${heure}`)
     $('.msg').html(msg);
 });
-
-
+</script>
