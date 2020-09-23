@@ -1,6 +1,6 @@
 <?php
 $selectionInitiale = "";
 foreach(range('A','Z') as $i) {
-    $selectionInitiale.= '<button type="button" class="btn btn-primary">'.$i.'</button>';
+    $selectionInitiale.='<a class="btn btn-primary" href="initiale.php?initiale='.$i.'" role="button">'.$i.'</a>';
 }
 ?>

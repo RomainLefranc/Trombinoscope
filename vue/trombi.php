@@ -13,6 +13,13 @@
         <!-- Bootstrap core CSS -->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+        <!-- FONT AWESOME -->
+        <script src="./assets/efcb5b7b29.js"></script>
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
+        <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
+
+        <!-- JS PERSO -->
         <link rel="stylesheet" href="../css/style.css">
     </head>
 <body>
@@ -26,7 +33,7 @@
         ?>
     </div>
     <?php
-        include "../modele/footer_fixed.php";
+        include "../modele/footer.php";
     ?>
 </body>
 </html>
