@@ -18,6 +18,5 @@
     <?php
         include "../modele/trombi_header.php"
     ?>
-<p>Salut mec, je parie que ton nom c'est <?php echo $user ?>  </p>
 </body>
 </html>
