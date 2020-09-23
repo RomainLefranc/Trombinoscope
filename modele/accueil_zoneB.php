@@ -13,7 +13,7 @@
             <?php
             if (isset($_POST["erreur"] )) {
                 if ($_POST["erreur"] == 1) {
-                    echo '<p class="text-danger text-center mt-2">Mot de passe ou identifiant invalide</p>';
+                    echo '<p class="text-danger mt-2">Mot de passe ou identifiant invalide</p>';
                 }
             }
             ?>

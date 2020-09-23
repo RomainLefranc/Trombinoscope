@@ -20,14 +20,27 @@
     </head>
     <body>
         <?php
-            include "modele/navbar.php";
-            include "modele/header.php";
-            include "modele/connexion.php";
-            include "modele/news.php";
+            include "modele/accueil_navbar.php";
+            include "modele/accueil_header.php";
+        ?>
+        <div class="container">
+            <div class="row">
+                <?php 
+                    include "modele/accueil_zoneA.php";
+                    include "modele/accueil_zoneB.php";
+                ?>
+            </div>
+            <div class="row">
+                <?php 
+                    include "modele/accueil_zoneC.php";
+                    include "modele/accueil_zoneD.php";
+                    include "modele/accueil_zoneE.php";
+                ?>
+            </div>
+        </div>
+        <?php
             include "modele/footer.php";
             include "controleur/dateLocale.php";
         ?> 
-
     </body>
-
 </html>
