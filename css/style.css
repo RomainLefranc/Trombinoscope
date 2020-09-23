@@ -36,3 +36,8 @@ input:focus {
     border-color: #9E84B3!important;
 }
 
+.table .thead-dark th {
+    color: #fff;
+    background-color:#5B4B66!important;
+    border-color: #5B4B66!important;
+  }
