@@ -7,7 +7,7 @@
             if ($login == $value[0] && $mdp == $value[1]) {
                 session_start();
                 $_SESSION["user"] = $login;
-                header('Location: vue/trombi.php');
+                header('Location: trombi.php');
                 exit;
             } else {
                 $_POST["erreur"] = 1;

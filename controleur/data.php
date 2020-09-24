@@ -9,5 +9,5 @@
         [2,"Digital Codeur",date("j/m/Y"),10],
         [3,"DWWM",date("j/m/Y"),14],
         [4,"Digital Mediateur",date("j/m/Y"),16]
-    )
+    );
 ?>

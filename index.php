@@ -20,26 +20,26 @@
     </head>
     <body>
         <?php
-            include "modele/accueil_navbar.php";
-            include "modele/accueil_header.php";
+            include "view/accueil/accueil_navbar.php";
+            include "view/accueil/accueil_header.php";
         ?>
         <div class="container">
             <div class="row">
                 <?php 
-                    include "modele/accueil_zoneA.php";
-                    include "modele/accueil_zoneB.php";
+                    include "view/accueil/accueil_zoneA.php";
+                    include "view/accueil/accueil_zoneB.php";
                 ?>
             </div>
             <div class="row">
                 <?php 
-                    include "modele/accueil_zoneC.php";
-                    include "modele/accueil_zoneD.php";
-                    include "modele/accueil_zoneE.php";
+                    include "view/accueil/accueil_zoneC.php";
+                    include "view/accueil/accueil_zoneD.php";
+                    include "view/accueil/accueil_zoneE.php";
                 ?>
             </div>
         </div>
         <?php
-            include "modele/footer.php";
+            include "view/footer.php";
             include "controleur/dateLocale.php";
         ?> 
     </body>

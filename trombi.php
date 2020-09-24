@@ -1,7 +1,7 @@
 <?php
-    include "../controleur/session.php";
-    include "../controleur/listesection.php";
-    include "../controleur/initiale.php";
+    include "controleur/session.php";
+    include "controleur/listesection.php";
+    include "controleur/initiale.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,7 +11,7 @@
         <title>Trombinoscope</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- FONT AWESOME -->
         <script src="./assets/efcb5b7b29.js"></script>
@@ -20,20 +20,20 @@
         <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
 
         <!-- JS PERSO -->
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
 <body>
     <?php
-        include "../modele/trombi_header.php";  
+        include "view/trombi/trombi_header.php";  
     ?>
     <div class="container">
         <?php
-            include "../modele/trombi_listeSections.php";
-            include "../modele/trombi_zoneInitiale.php";
+            include "view/trombi/trombi_listeSections.php";
+            include "view/trombi/trombi_zoneInitiale.php";
         ?>
     </div>
     <?php
-        include "../modele/footer.php";
+        include "view/footer.php";
     ?>
 </body>
 </html>
