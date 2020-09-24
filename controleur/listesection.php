@@ -1,5 +1,5 @@
 <?php
-    include "data.php";
+    include "modele/data.php";
     $donnee = "";
     foreach ($donneeSections as $section) {
         $donnee.= '

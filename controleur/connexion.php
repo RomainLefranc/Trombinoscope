@@ -1,5 +1,5 @@
 <?php
-    include "data.php";
+    include "modele/data.php";
     if (isset($_POST["login"]) && isset($_POST["mdp"])) {
         $login = $_POST["login"];
         $mdp = $_POST["mdp"];
