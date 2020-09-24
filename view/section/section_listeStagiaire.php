@@ -6,6 +6,7 @@
             <th scope="col" class="border-0 text-center">Nom</th>
             <th scope="col" class="border-0 text-center">Prénom</th>
             <th scope="col" class="border-0 text-center">Interne</th>
+            <th scope="col" class="border-0 text-center">Photo identité</th>
             <th scope="col" class="rounded-right border-0 text-center">Action</th>
         </thead>
         <tbody>
