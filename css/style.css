@@ -41,3 +41,7 @@ input:focus {
     background-color:#5B4B66!important;
     border-color: #5B4B66!important;
 }
+
+.initiale {
+    margin: 2px;
+}

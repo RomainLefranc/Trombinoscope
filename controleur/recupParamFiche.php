@@ -1,8 +1,19 @@
 <?php
+include "modele/data.php";
 if (isset($_GET["section"]) && isset($_GET["stagiaire"])) {
     if (!empty($_GET["section"]) && !empty($_GET["stagiaire"])) {
-        $stagiaire = $_GET["stagiaire"];
-        $section = $_GET["section"];
+        $codeStagiaire = $_GET["stagiaire"];
+        $codeSection = $_GET["section"];
+        foreach ($donneeSections as $section) {
+            if ($codeSection == $section[0]) {
+                $nomSection = $section[1];
+            }
+        }
+        foreach ($donneeStagiaire as $stagiaire) {
+            if ($codeStagiaire == $stagiaire[1]) {
+                $nomStagiaire = $stagiaire[2]." ".$stagiaire[3];
+            }
+        }
     }
 } else {
     header("location: trombi.php");

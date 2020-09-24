@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Liste des sections</h3>
+    <h3>Résultat de la recherche</h3>
     <table class="table table-hover">
         <thead class="thead-dark">
             <th scope="col" class="rounded-left border-0 text-center">Code Section</th>
