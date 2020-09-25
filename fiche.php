@@ -1,6 +1,6 @@
 <?php
     include "controleur/session.php";
-    include "controleur/recupParamFiche.php";
+    include "controleur/fiche/recupParamFiche.php";
 
 ?>
 <!DOCTYPE html>

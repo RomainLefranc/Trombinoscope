@@ -1,8 +1,8 @@
 <?php
 
     include "controleur/session.php";
-    include "controleur/recupParamSection.php";
-    include "controleur/listeStagiaireSection.php";
+    include "controleur/section/recupParamSection.php";
+    include "controleur/section/listeStagiaireSection.php";
 
 ?>
 <!DOCTYPE html>

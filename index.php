@@ -1,6 +1,6 @@
 <?php
-    include "controleur/connexion.php";
-    include "controleur/dateServeur.php";
+    include "controleur/accueil/connexion.php";
+    include "controleur/accueil/dateServeur.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,7 +40,7 @@
         </div>
         <?php
             include "view/footer.php";
-            include "controleur/dateLocale.php";
+            include "controleur/accueil/dateLocale.php";
         ?> 
     </body>
 </html>

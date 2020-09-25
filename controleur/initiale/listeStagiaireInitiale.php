@@ -16,7 +16,4 @@
             ';
         }
     }
-    if ($donnee == "") {
-        $donnee = "Aucun stagiaire trouvé";
-    }
 ?>

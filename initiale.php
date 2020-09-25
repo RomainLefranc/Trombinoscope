@@ -1,8 +1,8 @@
 <?php
 
     include "controleur/session.php";
-    include "controleur/recupParamInitiale.php";
-    include "controleur/listeStagiaireInitiale.php";
+    include "controleur/initiale/recupParamInitiale.php";
+    include "controleur/initiale/listeStagiaireInitiale.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,7 +26,7 @@
     <?php
         include "view/initiale/initiale_header.php";
         include "view/initiale/initiale_listeStagiaires.php";
-        include "view/footer_fixed.php";
+        include "view/footer.php";
     ?>
 </body>
 </html>
