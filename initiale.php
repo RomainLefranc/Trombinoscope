@@ -20,6 +20,7 @@
     <link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet">
     <link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
     
+    <!-- CSS Perso -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

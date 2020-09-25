@@ -15,8 +15,12 @@
         <!-- Custom styles for this template -->
         <link href="css/business-frontpage.css" rel="stylesheet">
 
+        <!-- CSS Perso -->
         <link rel="stylesheet" href="css/style.css">
+
+         <!-- Jquery -->
         <script src="vendor/jquery/jquery.js"></script>
+
     </head>
     <body>
         <?php
