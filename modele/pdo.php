@@ -8,10 +8,10 @@
 
     /*  Accueil Trombi
 
-            SELECT COUNT(*) 
+            SELECT LEFT(NomSta,1),COUNT(*) 
                 FROM tableStagiaires
-            GROUP BY LEFT(NomStagiaire,1),COUNT(*)
-            ORDER BY LEFT(NomStagiaire,1) ASC
+            GROUP BY LEFT(NomSta,1)
+            ORDER BY LEFT(NomSta,1) ASC
 
             SELECT *
                 FROM tableSections 
