@@ -8,7 +8,7 @@ if (isset($_SESSION["user"])) {
             }
         }
     } else {
-        header("location: index.php?action=T&erreur=1");
+        header("location: index.php?action=T&erreur=2");
     }
     $donnee = "";
     foreach ($donneeStagiaire as $stagiaire) {

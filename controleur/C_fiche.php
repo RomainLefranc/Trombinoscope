@@ -1,7 +1,6 @@
 <?php
-include "modele/data.php";
-if (isset($_GET["section"]) && isset($_GET["stagiaire"])) {
-    if (!empty($_GET["section"]) && !empty($_GET["stagiaire"])) {
+if (isset($_SESSION['user'])) {
+    if (isset($_GET["section"]) && isset($_GET["stagiaire"]) && !empty($_GET["section"]) && !empty($_GET["stagiaire"])) {
         $codeStagiaire = $_GET["stagiaire"];
         $codeSection = $_GET["section"];
         foreach ($donneeSections as $section) {
@@ -20,10 +19,14 @@ if (isset($_GET["section"]) && isset($_GET["stagiaire"])) {
                 $interne = $stagiaire[6];
                 $telephone = $stagiaire[7];
                 $mail = $stagiaire[8];
+
             }
         }
+    } else {
+        header("location: index.php?action=T&Erreur=3");
     }
 } else {
-    header("location: trombi.php");
+    include "403.php";
 }
+
 ?>
