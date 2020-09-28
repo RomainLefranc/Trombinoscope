@@ -40,7 +40,7 @@
         </div>
         <?php
             include "view/footer.php";
-            include "controleur/accueil/dateLocale.php";
+            include "js/dateLocale.php";
         ?> 
     </body>
 </html>

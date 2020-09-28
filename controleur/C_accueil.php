@@ -14,12 +14,12 @@
                 exit;
             } else {
                 $_POST["erreur"] = 1;
-                include "accueil.php";
+                include "view/accueil.php";
 
             }
         }
     } else {
-        include "accueil.php";
+        include "view/accueil.php";
     }
 
 ?>

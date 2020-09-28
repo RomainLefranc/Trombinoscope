@@ -32,8 +32,8 @@
             </tr>
             ';
         }
-        include "trombi.php";
+        include "view/trombi.php";
     } else {
-        include "403.php";
+        include "view/403.php";
     }
 ?>

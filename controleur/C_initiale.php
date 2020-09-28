@@ -18,13 +18,13 @@ if (isset($_SESSION['user'])) {
                 ';
             }
         }
-        include "initiale.php";
+        include "view/initiale.php";
     } else {
         header("location: index.php?action=T&erreur=1");
     }
  
 } else {
-    include "403.php";
+    include "view/403.php";
 }
 
 

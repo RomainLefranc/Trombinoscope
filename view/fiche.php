@@ -1,7 +1,3 @@
-<?php
-    include "controleur/session.php";
-    include "controleur/fiche/recupParamFiche.php";
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
