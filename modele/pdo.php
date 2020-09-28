@@ -14,7 +14,7 @@
             ORDER BY LEFT(NomSta,1) ASC
 
             SELECT *
-                FROM tableSections 
+                FROM tableSections
             ORDER BY codeSection ASC
 
         Choix 1 initiale
