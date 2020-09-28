@@ -19,6 +19,7 @@
 <body>
     <?php
         include "view/fiche/fiche_header.php";
+        include "view/fiche/fiche_info.php";
         include "view/footer_fixed.php";
     ?>
 </body>

@@ -11,7 +11,14 @@ if (isset($_GET["section"]) && isset($_GET["stagiaire"])) {
         }
         foreach ($donneeStagiaire as $stagiaire) {
             if ($codeStagiaire == $stagiaire[1] && $stagiaire[0] == $codeSection) {
-                $nomStagiaire = $stagiaire[2]." ".$stagiaire[3];
+                $prenomStagiaire = $stagiaire[2];
+                $nomStagiaire = $stagiaire[3];
+                $dateNaiss = $stagiaire[4];
+                $villeSta = $stagiaire[5];
+                $interne = $stagiaire[6];
+                $telephone = $stagiaire[7];
+                $mail = $stagiaire[8];
+
             }
         }
     }
