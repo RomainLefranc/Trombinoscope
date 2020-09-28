@@ -1,9 +1,3 @@
-<?php
-
-    include "controleur/session.php";
-    include "controleur/initiale/recupParamInitiale.php";
-    include "controleur/initiale/listeStagiaireInitiale.php";
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

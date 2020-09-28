@@ -1,5 +1,5 @@
 <div class="col-md-4 mb-5">
-    <form action="index.php" method="POST" class=" p-4 rounded bg-light">
+    <form action="index.php?action=A" method="POST" class=" p-4 rounded bg-light">
         <div class="form-group">
             <h2>Connexion</h2>
             <label for="id">Adresse mail</label>

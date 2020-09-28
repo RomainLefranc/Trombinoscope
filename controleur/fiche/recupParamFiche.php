@@ -7,6 +7,8 @@ if (isset($_GET["section"]) && isset($_GET["stagiaire"])) {
         foreach ($donneeSections as $section) {
             if ($codeSection == $section[0]) {
                 $nomSection = $section[1];
+                $dateDebut = $section[2];
+                $nbSta = $section[3];
             }
         }
         foreach ($donneeStagiaire as $stagiaire) {
@@ -18,7 +20,6 @@ if (isset($_GET["section"]) && isset($_GET["stagiaire"])) {
                 $interne = $stagiaire[6];
                 $telephone = $stagiaire[7];
                 $mail = $stagiaire[8];
-
             }
         }
     }

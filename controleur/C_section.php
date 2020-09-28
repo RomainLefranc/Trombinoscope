@@ -1,5 +1,15 @@
 <?php
-    include "modele/data.php";
+if (isset($_SESSION["user"])) {
+    if (isset($_GET["section"]) && !empty($_GET["section"])) {
+        $codeSection = $_GET["section"];
+        foreach ($donneeSections as $section) {
+            if ($codeSection == $section[0]) {
+                $nomSection = $section[1];
+            }
+        }
+    } else {
+        header("location: index.php?action=T&erreur=1");
+    }
     $donnee = "";
     foreach ($donneeStagiaire as $stagiaire) {
         if ($codeSection == $stagiaire[0]) {
@@ -18,4 +28,10 @@
     if ($donnee == "") {
         $donnee = "Aucun stagiaire dans cet section.";
     }
+    include "section.php";
+
+} else {
+    include "403.php";
+}
+
 ?>

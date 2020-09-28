@@ -1,10 +1,3 @@
-<?php
-
-    include "controleur/session.php";
-    include "controleur/section/recupParamSection.php";
-    include "controleur/section/listeStagiaireSection.php";
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,11 +19,8 @@
 </head>
 <body>
     <?php
-
         include "view/section/section_header.php";
         include "view/section/section_listeStagiaire.php";
-
-    ?>
-    
+    ?>  
 </body>
 </html>

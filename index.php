@@ -1,50 +1,23 @@
 <?php
-    include "controleur/accueil/connexion.php";
-    include "controleur/accueil/dateServeur.php";
+include "modele/data.php";
+session_start();
+if (isset($_SESSION["user"])) {
+    $user = $_SESSION["user"];
+}
+
+if (!isset($_GET["action"]) || $_GET["action"] == "A") {
+    include "controleur/C_accueil.php";
+} elseif ($_GET["action"] == "T" ) {
+    include "controleur/C_trombi.php";
+} elseif ($_GET["action"] == "S") {
+    include "controleur/C_section.php";
+} elseif ($_GET["action"] == "I") {
+    include "controleur/C_initiale.php";
+} elseif ($_GET["action"] == "F") {
+    include "controleur/C_fiche.php";
+} else {
+    include "404.php";
+}
+
+
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="css/business-frontpage.css" rel="stylesheet">
-
-        <!-- CSS Perso -->
-        <link rel="stylesheet" href="css/style.css">
-
-         <!-- Jquery -->
-        <script src="vendor/jquery/jquery.js"></script>
-
-    </head>
-    <body>
-        <?php
-            include "view/accueil/accueil_navbar.php";
-            include "view/accueil/accueil_header.php";
-        ?>
-        <div class="container">
-            <div class="row">
-                <?php 
-                    include "view/accueil/accueil_zoneA.php";
-                    include "view/accueil/accueil_zoneB.php";
-                ?>
-            </div>
-            <div class="row">
-                <?php 
-                    include "view/accueil/accueil_zoneC.php";
-                    include "view/accueil/accueil_zoneD.php";
-                    include "view/accueil/accueil_zoneE.php";
-                ?>
-            </div>
-        </div>
-        <?php
-            include "view/footer.php";
-            include "controleur/accueil/dateLocale.php";
-        ?> 
-    </body>
-</html>

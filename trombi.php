@@ -1,8 +1,4 @@
-<?php
-    include "controleur/session.php";
-    include "controleur/trombi/listesection.php";
-    include "controleur/trombi/initiale.php";
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>

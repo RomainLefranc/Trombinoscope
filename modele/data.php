@@ -12,8 +12,6 @@
     );
 
     $donneeStagiaire  = array (
-        "prenom" => ["Romain","Pierre","Alphonse","Victor","Angelina","Angelina","Lucie","Lorenzo","Lily","Anna","Lou","Anaïs","Gilbert","Lauriane","Solene","Marine","Maïwenn","Margot"],
-        "nom" => ["Lefranc","Couture","Brunault","Schneider","Adam","Julien","Lambert","Lefevre","Robert","Leclercq","Perrot","Laine","Jacob","Berger","Guerin","Rolland","Chevallier"],
         [3,3,"Romain","Lefranc","26/06/1998","Saint-André", "non", "0693907333", "lefranc46@gmail.com", ""],
         [2,14,"Pierre","Couture","12/04/1995","Sainte-Suzanne", "non", "0693907333", "Pierre.Couture@gmail.com", ""],
         [4,12,"Alphonse","Brunault","22/12/1989","Saint-Denis", "oui", "0693907333", "Alphonse974@gmail.com", ""],
