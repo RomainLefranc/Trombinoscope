@@ -1,23 +1,31 @@
 <?php
 include "modele/data.php";
 session_start();
-if (isset($_SESSION["user"])) {
-    $user = $_SESSION["user"];
-}
-
-if (!isset($_GET["action"]) || $_GET["action"] == "A") {
-    include "controleur/C_accueil.php";
-} elseif ($_GET["action"] == "T" ) {
-    include "controleur/C_trombi.php";
-} elseif ($_GET["action"] == "S") {
-    include "controleur/C_section.php";
-} elseif ($_GET["action"] == "I") {
-    include "controleur/C_initiale.php";
-} elseif ($_GET["action"] == "F") {
-    include "controleur/C_fiche.php";
-} elseif ($_GET["action"] == "D") {
-    include "controleur/C_deconnexion.php";
+if (isset($_GET["action"])) {
+    switch ($_GET["action"]) {
+        case "A":
+            include "controleur/C_accueil.php";
+            break;
+        case "T":
+            include "controleur/C_trombi.php";
+            break;
+        case 'S':
+            include "controleur/C_section.php";
+            break;
+        case 'I':
+            include "controleur/C_initiale.php";
+            break;
+        case 'F':
+            include "controleur/C_fiche.php";
+            break;
+        case 'D':
+            include "controleur/C_deconnexion.php";
+            break;
+        default:
+            include "view/404.php";
+            break;
+    }
 } else {
-    include "view/404.php";
+    include "controleur/C_accueil.php";
 }
 ?>

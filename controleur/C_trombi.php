@@ -1,5 +1,6 @@
 <?php
     if (isset($_SESSION["user"])) {
+        $user = $_SESSION["user"];
         $selectionInitiale = "";
         foreach(range('A','Z') as $i) {
             $cpt = 0;
@@ -14,7 +15,6 @@
             }
             $selectionInitiale.='<a class="btn btn-primary initiale '.$disabled.'" data-toggle="tooltip" title="'.$cpt.'" href="index.php?action=I&initiale='.$i.'&page=1" role="button">'.$i.'</a>';
         }
-
         $donnee = "";
         foreach ($donneeSections as $section) {
             $disabled = "";
