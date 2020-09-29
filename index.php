@@ -5,7 +5,6 @@ if (isset($_SESSION["user"])) {
     $user = $_SESSION["user"];
 }
 
-
 if (!isset($_GET["action"]) || $_GET["action"] == "A") {
     include "controleur/C_accueil.php";
 } elseif ($_GET["action"] == "T" ) {
@@ -20,8 +19,5 @@ if (!isset($_GET["action"]) || $_GET["action"] == "A") {
     include "controleur/C_deconnexion.php";
 } else {
     include "view/404.php";
-
 }
-
-
 ?>
