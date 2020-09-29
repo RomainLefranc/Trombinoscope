@@ -15,7 +15,6 @@
             } else {
                 $_POST["erreur"] = 1;
                 include "view/accueil.php";
-
             }
         }
     } else {

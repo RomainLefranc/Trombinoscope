@@ -19,11 +19,10 @@ if (isset($_SESSION['user'])) {
                 $interne = $stagiaire[6];
                 $telephone = $stagiaire[7];
                 $mail = $stagiaire[8];
-
             }
         }
     } else {
-        header("location: index.php?action=T&Erreur=3");
+        header("location: index.php?action=T&erreur=1");
     }
     include "view/fiche.php";
 } else {

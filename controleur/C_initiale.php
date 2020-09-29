@@ -20,7 +20,7 @@ if (isset($_SESSION['user'])) {
         }
         include "view/initiale.php";
     } else {
-        header("location: index.php?action=T&erreur=1");
+        header("location: index.php?action=T&erreur=2");
     }
  
 } else {

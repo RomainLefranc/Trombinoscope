@@ -5,7 +5,7 @@
         <h1 class="display-4 text-white mb-2 msg">
             Section : <?php echo $nomSection ?>
         </h1>
-        <a class="btn btn-primary" href="controleur/deconnexion.php" role="button">Deconnexion</a>
+        <a class="btn btn-primary" href="index.php?action=D" role="button">Deconnexion</a>
         <a class="btn btn-primary" href=javascript:history.go(-1) role="button">Retour</a>
       </div>
     </div>
