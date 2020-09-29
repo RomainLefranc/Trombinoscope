@@ -24,7 +24,7 @@ if (isset($_SESSION['user'])) {
     }
  
 } else {
-    include "view/403.php";
+    $view = "403";
 }
 
 

@@ -31,8 +31,8 @@
                 <th class="align-middle "><a class="btn btn-primary '.$disabled.'" href="index.php?action=S&section='.$section[0].'" role="button"><i class="fas fa-eye"></i></a></th>
             </tr>';
         }
-        include "view/trombi.php";
+        $view = "trombi";
     } else {
-        include "view/403.php";
+        $view = "403";
     }
 ?>

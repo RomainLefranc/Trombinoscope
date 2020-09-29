@@ -24,12 +24,12 @@ if (isset($_SESSION["user"])) {
         if ($donnee == "") {
             $donnee = "Aucun stagiaire dans cet section.";
         }
-        include "view/section.php";
+        $view = "section";
     } else {
         header("location: index.php?action=T&erreur=3");
     }
 } else {
-    include "view/403.php";
+    $view = "403";
 }
 
 ?>

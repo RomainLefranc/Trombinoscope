@@ -24,9 +24,9 @@ if (isset($_SESSION['user'])) {
     } else {
         header("location: index.php?action=T&erreur=1");
     }
-    include "view/fiche.php";
+    $view = "fiche";
 } else {
-    include "view/403.php";
+    $view = "403";
 }
 
 ?>
