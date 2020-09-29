@@ -1,6 +1,8 @@
 <?php
+include "modele/data.php";
 session_start();
-/* if (isset($_GET["action"])) {
+$control = "";
+if (isset($_GET["action"])) {
     switch ($_GET["action"]) {
         case "A":
             $control = "accueil";
@@ -26,11 +28,11 @@ session_start();
     }
 } else {
     $control = "accueil";
-};
+}
 include "controleur/C_$control.php";
-include "view/$view.php"; */
+include "view/$view.php";
 
-function genererHTML() {
+/* function genererHTML() {
 
     include "modele/data.php";
 
@@ -43,11 +45,12 @@ function genererHTML() {
         foreach ($pages as $page) {
             if ($page[0] == $action) {
                 $control = $page[1];
+                
             }
         }
     };
     include "controleur/C_$control.php";
     include "view/$view.php";
 };
-genererHTML();
+genererHTML(); */
 ?>
