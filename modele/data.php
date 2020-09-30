@@ -1,7 +1,8 @@
 <?php
     $donneeConnexion = array(
         ["Romain",1],
-        ["Mr Lefranc",2]
+        ["Mr Lefranc",2],
+        ["lefranc46@gmail.com","lol"]
     );
 
     $donneeSections = array (

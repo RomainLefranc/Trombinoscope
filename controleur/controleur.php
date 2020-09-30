@@ -35,7 +35,6 @@ function verifAction(){
         header("location: index.php?action=A");
     }
 }
-
 function genererHTML() {
     include "modele/data.php";
     $pages = array (["A","accueil"],["T","trombi"],["S","section"],["I","initiale"],["F","fiche"],["D","deconnexion"]);
