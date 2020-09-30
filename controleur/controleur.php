@@ -8,7 +8,7 @@ function verifSession() {
     }
 }
 function verifInitiale() {
-    if (isset($_GET["initiale"]) && !empty($_GET["initiale"]) && is_string($_GET["initiale"])) {
+    if (isset($_GET["initiale"]) && !empty($_GET["initiale"]) && !is_numeric($_GET["initiale"])) {
         return true;
     } else {
         header("location: index.php?action=T&erreur=1");
