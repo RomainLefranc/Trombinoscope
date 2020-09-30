@@ -3,7 +3,7 @@
   if (isset($_GET["erreur"])) {
     if ($_GET["erreur"] == 3) {
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Erreur!</strong> Section ou stagiaire invalide
+        <strong>Erreur!</strong> Stagiaire invalide
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -22,6 +22,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
+    } elseif ($_GET["erreur"] == 4) {
+      # code...
     }
   }
 ?>

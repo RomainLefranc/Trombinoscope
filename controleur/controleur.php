@@ -28,7 +28,6 @@ function verifStagiaire(){
         header("location: index.php?action=T&erreur=3");
     }
 }
-
 function verifAction(){
     if (isset($_GET["action"])) {
        return true;
