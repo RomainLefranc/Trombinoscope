@@ -1,8 +1,6 @@
-<div class="row justify-content-center m-5">
-    <h3>Recherche par initiale</h3>
-    <div class="row">
-        <?php
-            echo $selectionInitiale ;
-        ?>
-    </div>
+<h3>Recherche par initiale</h3>
+<div class="mt-1 mb-5">
+    <?php
+        echo $selectionInitiale ;
+    ?>
 </div>

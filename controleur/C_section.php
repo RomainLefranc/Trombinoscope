@@ -31,5 +31,6 @@ if (isset($_SESSION["user"])) {
 } else {
     $view = "403";
 }
+include "view/$view.php";
 
 ?>

@@ -1,53 +1,52 @@
 <?php
+include "modele/data.php";
 session_start();
 /* if (isset($_GET["action"])) {
     switch ($_GET["action"]) {
         case "A":
-            $control = "accueil";
+            include "controleur/C_accueil.php";
             break;
         case "T":
-            $control = "trombi";
+            include "controleur/C_trombi.php";
             break;
         case 'S':
-            $control = "section"
+            include "controleur/C_section.php"
 ;            break;
         case 'I':
-            $control = "initiale";
+            include "controleur/C_initiale.php";
             break;
         case 'F':
-            $control = "fiche";
+            include "controleur/C_fiche.php";
             break;
         case 'D':
-            $control = "deconnexion";
+            include "controleur/C_deconnexion.php";
             break;
         default:
-            $view = "404";
+            include "view/404.php";
             break;
     }
 } else {
-    $control = "accueil";
-};
-include "controleur/C_$control.php";
-include "view/$view.php"; */
+    header("location: index.php?action=A");
+} */
 
 function genererHTML() {
 
     include "modele/data.php";
-
     $pages = array (["A","accueil"],["T","trombi"],["S","section"],["I","initiale"],["F","fiche"],["D","deconnexion"]);
-
-    $control = "accueil";
-
-    if (isset($_GET["action"])) {
-        $action = $_GET['action'];
+    $controlExiste = false;
+   if (isset($_GET["action"])) {
         foreach ($pages as $page) {
-            if ($page[0] == $action) {
-                $control = $page[1];
+            if ($page[0] == $_GET['action']) {
+                include "controleur/C_$page[1].php";
+                $controlExiste = true;
             }
         }
-    };
-    include "controleur/C_$control.php";
-    include "view/$view.php";
+        if (!$controlExiste) {
+            include "view/404.php";
+        }
+    } else {
+        header("location: index.php?action=A");
+    }
 };
 genererHTML();
 ?>

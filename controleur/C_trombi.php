@@ -13,7 +13,7 @@
             if ($cpt == 0) {
                 $disabled = "disabled";
             }
-            $selectionInitiale.='<a class="btn btn-primary initiale '.$disabled.'" data-toggle="tooltip" title="'.$cpt.'" href="index.php?action=I&initiale='.$i.'&page=1" role="button">'.$i.'</a>';
+            $selectionInitiale.='<a class="btn btn-primary initiale '.$disabled.'" data-toggle="tooltip" data-placement="bottom" title="'.$cpt.'" href="index.php?action=I&initiale='.$i.'&page=1" role="button">'.$i.'</a>';
         }
         $donnee = "";
         foreach ($donneeSections as $section) {
@@ -35,4 +35,5 @@
     } else {
         $view = "403";
     }
+    include "view/$view.php";
 ?>

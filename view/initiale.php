@@ -21,7 +21,6 @@
     <?php
         include "view/initiale/initiale_header.php";
         include "view/initiale/initiale_listeStagiaires.php";
-        include "view/footer.php";
     ?>
 </body>
 </html>

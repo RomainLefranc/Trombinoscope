@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
                 ';
             }
         }
-        include "view/initiale.php";
+        $view = "initiale";
     } else {
         header("location: index.php?action=T&erreur=2");
     }
@@ -26,6 +26,7 @@ if (isset($_SESSION['user'])) {
 } else {
     $view = "403";
 }
+include "view/$view.php";
 
 
 

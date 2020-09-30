@@ -20,5 +20,6 @@
     } else {
         $view = "accueil";
     }
+    include "view/$view.php";
 
 ?>
