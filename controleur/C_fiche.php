@@ -1,25 +1,21 @@
 <?php
 if (verifSession() && verifSection() && verifStagiaire()) {
-    $codeStagiaire = $_GET["stagiaire"];
-    $codeSection = $_GET["section"];
-    foreach ($donneeSections as $section) {
-        if ($codeSection == $section[0]) {
-            $nomSection = $section[1];
-            $dateDebut = $section[2];
-            $nbSta = $section[3];
-        }
-    }
-    foreach ($donneeStagiaire as $stagiaire) {
-        if ($codeStagiaire == $stagiaire[1] && $stagiaire[0] == $codeSection) {
-            $prenomStagiaire = $stagiaire[2];
-            $nomStagiaire = $stagiaire[3];
-            $dateNaiss = $stagiaire[4];
-            $villeSta = $stagiaire[5];
-            $interne = $stagiaire[6];
-            $telephone = $stagiaire[7];
-            $mail = $stagiaire[8];
-        }
-    }
+    include "modele/fiche_manager.php";
+    $codSta = $_GET["stagiaire"];
+    $codSec = $_GET["section"];
+    $donneeSections = getInfoSec($codSec);
+    $nomSection = $donneeSections[0][0];
+    $dateDebut = $donneeSections[0][1];
+    $nbSta = $donneeSections[0][2];
+    $donneeStagiaire = getInfoSta($codSta);
+    $prenomStagiaire = $donneeStagiaire[0][0];
+    $nomStagiaire = $donneeStagiaire[0][1];
+    $dateNaiss = $donneeStagiaire[0][2];
+    $villeSta = $donneeStagiaire[0][3];
+    
+    $interne = $donneeStagiaire[0][4];
+    $telephone = $donneeStagiaire[0][5];
+    $mail = $donneeStagiaire[0][6];
     $view = "fiche";
 }
 include "view/$view.php";

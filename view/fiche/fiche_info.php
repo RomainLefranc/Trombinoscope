@@ -3,7 +3,7 @@
     <div class="form-row">
         <div class="form-group col-md-3">
             <label for="codeSection">Code </label>
-            <input type="text" class="form-control" id="codeSection"  value="<?php echo $codeSection ?>"disabled>
+            <input type="text" class="form-control" id="codeSection"  value="<?php echo $codSec ?>"disabled>
         </div>
         <div class="form-group col-md-3">
             <label for="libelleSection">Libellé </label>

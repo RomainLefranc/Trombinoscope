@@ -1,4 +1,20 @@
 <div class="col-md-4 mb-5">
+    <?php
+    if (verifSession()) {
+        $user = $_SESSION["user"];
+        echo '
+        
+        <div class="d-flex justify-content-center">
+            <div class="container">
+                <h2>Bienvenue '.$user.'</h2>
+                <hr>
+                <a class="btn btn-primary d-block m-1" href="index.php?action=D" role="button">Se deconnecter</a>
+                <a class="btn btn-primary d-block m-1" href="index.php?action=T" role="button">Trombinoscope</a>
+            </div>
+        </div>
+        ';
+
+    } else { ?>
     <form action="index.php?action=A" method="POST" class=" p-4 rounded bg-light">
         <div class="form-group">
             <h2>Connexion</h2>
@@ -21,4 +37,9 @@
         <button type="submit" class="btn btn-primary">Connexion</button>
 
     </form>
+    <?php
+    }
+    ?>
+    
+    
 </div>

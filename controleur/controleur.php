@@ -8,27 +8,27 @@ function verifSession() {
     }
 }
 function verifInitiale() {
-    if (isset($_GET["initiale"]) && !empty($_GET["initiale"]) && !is_numeric($_GET["initiale"])) {
+    if (isset($_GET["initiale"]) && !empty($_GET["initiale"]) && !is_numeric($_GET["initiale"]) && strlen($_GET["initiale"]) == 1) {
         return true;
     } else {
         header("location: index.php?action=T&erreur=1");
     }
 }
 function verifSection() {
-    if (isset($_GET["section"]) && !empty($_GET["section"] ) && is_numeric($_GET["section"])) {
+    if (isset($_GET["section"]) && !empty($_GET["section"] ) && is_numeric($_GET["section"]) ) {
         return true;
     } else {
         header("location: index.php?action=T&erreur=2");
     }
 }
-function verifStagiaire(){
+function verifStagiaire() {
     if (isset($_GET["stagiaire"]) && !empty($_GET["stagiaire"] && is_numeric($_GET["stagiaire"]))) {
         return true;
     } else {
         header("location: index.php?action=T&erreur=3");
     }
 }
-function verifAction(){
+function verifAction() {
     if (isset($_GET["action"])) {
        return true;
     } else {
@@ -37,7 +37,7 @@ function verifAction(){
 }
 function genererHTML() {
     include "modele/data.php";
-    $pages = array (["A","accueil"],["T","trombi"],["S","section"],["I","initiale"],["F","fiche"],["D","deconnexion"]);
+    $pages = array (["A","accueil"],["T","trombi"],["S","section"],["I","initiale"],["F","fiche"],["D","deconnexion"],["L","gestion"],["C","cru"]);
     $controlExiste = false;
     if (verifAction()) {
         foreach ($pages as $page) {
@@ -51,4 +51,21 @@ function genererHTML() {
         }
     };
 };
+function getNews(int $nb,$donneeNews) {
+    return array_slice($donneeNews,0,$nb);
+}
+function verifSessionAdmin() {
+    if ($_SESSION['user'] == "boss") {
+        return true;
+    } else {
+        $view = "403";
+    }
+}
+function verifVue() {
+    if (isset($_GET["vue"]) && !empty($_GET["vue"])) {
+        return true;
+    } else {
+        header("location : index.php?action=L&erreur=1");
+    }
+}
 ?>

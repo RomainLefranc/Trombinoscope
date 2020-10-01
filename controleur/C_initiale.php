@@ -1,10 +1,11 @@
 <?php
 if (verifSession() && verifInitiale()) {
+    include "modele/initiale_manager.php";
     $initiale = $_GET["initiale"];
+    $donneeStagiaire = getInitiale($initiale);
     $donnee = "";
     foreach ($donneeStagiaire as $stagiaire) {
-        if ($initiale == substr($stagiaire[2],0,1)) {
-            $donnee.= '
+        $donnee.= '
             <tr>
                 <th class="align-middle " >'.$stagiaire[0].'</th>
                 <th class="align-middle " >'.$stagiaire[1].'</th>
@@ -15,7 +16,6 @@ if (verifSession() && verifInitiale()) {
                 <th class="align-middle " ><a class="btn btn-primary" href="index.php?action=F&stagiaire='.$stagiaire[1].'&section='.$stagiaire[0].'" role="button"><i class="fas fa-eye"></i></a></th>
             </tr>
             ';
-        }
     }
     $view = "initiale";
 }

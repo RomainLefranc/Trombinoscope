@@ -4,6 +4,11 @@
       <div class="col-lg-12">
         <h1 class="display-4 text-white mb-2 msg">Bienvenue <?php echo $user ?></h1>
         <a class="btn btn-primary" href="index.php?action=D" role="button">Deconnexion</a>
+        <?php
+          if ($_SESSION["user"] == "boss") {
+            echo '<a class="btn btn-primary" href="index.php?action=L" role="button">Gestion stagiaire</a>';
+          }
+        ?>
       </div>
     </div>
   </div>
