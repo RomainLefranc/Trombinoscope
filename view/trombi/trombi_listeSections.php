@@ -28,18 +28,20 @@
   }
 ?>
 <h3>Liste des sections</h3>
-<table class="table table-hover text-center">
-  <thead class="thead-dark ">
-    <th class="rounded-left border-0 align-middle">Code</th>
-    <th class="border-0 align-middle">Nom</th>
-    <th class="border-0 align-middle" >Date de debut formation</th>
-    <th class="border-0 align-middle">Nombre de stagiaires</th>
-    <th class="border-0 align-middle">Icone</th>
-    <th class="rounded-right border-0 align-middle">Action</th>
-  </thead>
-  <tbody>
-    <?php
-    echo $donnee;
-    ?>
-  </tbody>
-</table>
+<div class="table-responsive-md">
+  <table class="table table-hover text-center">
+    <thead class="thead-dark ">
+      <th class="rounded-left border-0 align-middle">Code</th>
+      <th class="border-0 align-middle">Nom</th>
+      <th class="border-0 align-middle" >Date de debut formation</th>
+      <th class="border-0 align-middle">Nombre de stagiaires</th>
+      <th class="border-0 align-middle">Icone</th>
+      <th class="rounded-right border-0 align-middle">Action</th>
+    </thead>
+    <tbody>
+      <?php
+      echo $donnee;
+      ?>
+    </tbody>
+  </table>
+</div>
