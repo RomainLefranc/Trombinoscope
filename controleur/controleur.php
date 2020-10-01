@@ -35,25 +35,6 @@ function verifAction() {
         header("location: index.php?action=A");
     }
 }
-function genererHTML() {
-    include "modele/data.php";
-    $pages = array (["A","accueil"],["T","trombi"],["S","section"],["I","initiale"],["F","fiche"],["D","deconnexion"],["L","gestion"],["C","cru"]);
-    $controlExiste = false;
-    if (verifAction()) {
-        foreach ($pages as $page) {
-            if ($page[0] == $_GET['action']) {
-                include "controleur/C_$page[1].php";
-                $controlExiste = true;
-            }
-        }
-        if (!$controlExiste) {
-            include "view/404.php";
-        }
-    };
-};
-function getNews(int $nb,$donneeNews) {
-    return array_slice($donneeNews,0,$nb);
-}
 function verifSessionAdmin() {
     if ($_SESSION['user'] == "boss") {
         return true;
