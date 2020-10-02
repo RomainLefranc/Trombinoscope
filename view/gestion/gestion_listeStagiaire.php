@@ -1,4 +1,9 @@
 <div class="container">
+    <form action="index.php?action=L" class="form-inline" method="post">
+        <label for="codSta"></label>
+        <input class="form-control mb-2 mr-sm-2" type="text" id="codSta" placeholder="Code Stagiaire" required>
+        <button type="submit" class="btn btn-primary mb-2">Ajouter un stagiaire</button>
+    </form>
     <h3>Résultat de la recherche</h3>
     <div class="table-responsive-md">
         <table class="table table-hover text-center">
@@ -18,5 +23,4 @@
             </tbody>
         </table>
     </div>
-
 </div>

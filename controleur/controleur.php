@@ -14,20 +14,7 @@ function verifInitiale() {
         header("location: index.php?action=T&erreur=1");
     }
 }
-function verifSection() {
-    if (isset($_GET["section"]) && !empty($_GET["section"] ) && is_numeric($_GET["section"]) ) {
-        return true;
-    } else {
-        header("location: index.php?action=T&erreur=2");
-    }
-}
-function verifStagiaire() {
-    if (isset($_GET["stagiaire"]) && !empty($_GET["stagiaire"] && is_numeric($_GET["stagiaire"]))) {
-        return true;
-    } else {
-        header("location: index.php?action=T&erreur=3");
-    }
-}
+
 function verifAction() {
     if (isset($_GET["action"])) {
        return true;

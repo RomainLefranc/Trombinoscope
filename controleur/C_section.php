@@ -1,6 +1,6 @@
 <?php
-if (verifSection() && verifSection()) {
-    include "modele/section_manager.php";
+include "modele/section_manager.php";
+if (verifSession() && verifSection()) {
     $codSec = $_GET["section"];
     $nomSection = getNomSec($codSec);
     $nomSection = $nomSection[0][0];

@@ -1,6 +1,7 @@
 <?php
+include "modele/section_manager.php";
+include "modele/fiche_manager.php";
 if (verifSession() && verifSection() && verifStagiaire()) {
-    include "modele/fiche_manager.php";
     $codSta = $_GET["stagiaire"];
     $codSec = $_GET["section"];
     $donneeSections = getInfoSec($codSec);

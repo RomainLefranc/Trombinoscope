@@ -15,7 +15,7 @@
     if (isset($_POST["login"]) && isset($_POST["mdp"])) {
         $login = $_POST["login"];
         $test = Connexion();
-        if ($test[0][0] >= 1) {
+        if ($test[0][0]) {
             $_SESSION["user"] = $login;
             header ('location: index.php?action=T');
             exit;
