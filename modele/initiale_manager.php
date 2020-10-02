@@ -10,5 +10,18 @@ function getInitiale($initiale) {
     $resultat = $requete->fetchall();
     return $resultat;
 }
+function verifInitiale() {
+    $initiale = $_GET["initiale"];
+    include "pdo.php";
+    $requete = $pdo->prepare('SELECT IF((SELECT COUNT(*) FROM Stagiaires WHERE LEFT(NomSta,1) = :initiale) > 0, TRUE, FALSE)'
+    );
+    $requete->execute(["initiale" => $initiale]);
+    $resultat = $requete->fetchall();
+    if ($resultat[0][0] && strlen($_GET["initiale"]) == 1) {
+        return true;
+    } else {
+        header("location: index.php?action=T&erreur=1");
+    }
+}
 
 ?>

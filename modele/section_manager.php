@@ -19,7 +19,7 @@ function getStagiaire($codSec) {
 }
 function verifSection() {
     include "pdo.php";
-    $requete = $pdo->prepare('SELECT IF((SELECT COUNT(*) FROM Stagiaires WHERE codSec = :codSec) > 0, TRUE, FALSE)');
+    $requete = $pdo->prepare('SELECT IF((SELECT COUNT(*) FROM Sections WHERE codSec = :codSec) > 0, TRUE, FALSE)');
     $requete->execute(["codSec" => $_GET["section"]]);
     $resultat = $requete->fetchall();
     if ($resultat[0][0]) {

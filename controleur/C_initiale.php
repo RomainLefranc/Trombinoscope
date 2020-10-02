@@ -1,6 +1,6 @@
 <?php
+include "modele/initiale_manager.php";
 if (verifSession() && verifInitiale()) {
-    include "modele/initiale_manager.php";
     $initiale = $_GET["initiale"];
     $donneeStagiaire = getInitiale($initiale);
     $donnee = "";

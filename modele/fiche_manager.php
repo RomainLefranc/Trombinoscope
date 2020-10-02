@@ -25,11 +25,12 @@ function getInfoSta($codSta) {
     return $resultat;
 }
 function verifStagiaire() {
+    $codSta = $_GET["stagiaire"];
+    $codSec = $_GET["section"];
     include "pdo.php";
-    $requete = $pdo->prepare('
-        SELECT IF((SELECT COUNT(*) FROM Stagiaires WHERE codSta = :codSta) > 0, TRUE, FALSE)'
+    $requete = $pdo->prepare('SELECT IF((SELECT COUNT(*) FROM Stagiaires WHERE codSta = :codSta AND codSec = :codSec) > 0, TRUE, FALSE)'
     );
-    $requete->execute(["codSta" => $codSta]);
+    $requete->execute(["codSta" => $codSta, "codSec" => $codSec]);
     $resultat = $requete->fetchall();
     if ($resultat[0][0]) {
         return true;
