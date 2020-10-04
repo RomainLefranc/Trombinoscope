@@ -16,7 +16,7 @@ function getInfoSec($codSec) {
 function getInfoSta($codSta) {
     include "pdo.php";
     $requete = $pdo->prepare('
-        SELECT preSta,nomSta,datNaisSta,villeSta,interneSta,gsmSta,mailSta 
+        SELECT preSta,nomSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")),villeSta,interneSta,gsmSta,mailSta 
             FROM Stagiaires 
             WHERE codSta = :codSta'
     );
