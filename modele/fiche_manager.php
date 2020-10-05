@@ -3,27 +3,27 @@
 function getInfoSec($codSec) {
     include "pdo.php";
     $requete = $pdo->prepare('
-        SELECT libSec,(SELECT DATE_FORMAT(datDebSec,"%d/%m/%Y")),
+        SELECT libSec,(SELECT DATE_FORMAT(datDebSec,"%d/%m/%Y")) AS datDebSec,
             (SELECT COUNT(*) 
                 FROM Stagiaires 
-                WHERE Sections.codSec = Stagiaires.codSec) 
+                WHERE Sections.codSec = Stagiaires.codSec) AS cptSta 
             FROM Sections 
             WHERE codSec = :codSec');
     $requete->execute(["codSec" => $codSec]);
     $resultat = $requete->fetchall();
-    return $resultat;
+    return $resultat[0];
 }
 
 function getInfoSta($codSta) {
     include "pdo.php";
     $requete = $pdo->prepare('
-        SELECT preSta,nomSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")),villeSta,interneSta,gsmSta,mailSta 
+        SELECT preSta,nomSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS datNaisSta,villeSta,interneSta,gsmSta,mailSta 
             FROM Stagiaires 
             WHERE codSta = :codSta'
     );
     $requete->execute(["codSta" => $codSta]);
     $resultat = $requete->fetchall();
-    return $resultat;
+    return $resultat[0];
 }
 function verifStagiaire() {
     $codSta = $_GET["stagiaire"];

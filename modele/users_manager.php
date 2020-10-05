@@ -14,7 +14,7 @@ function getNews($nb) {
     $requete = $pdo->prepare(
         'SELECT libNews 
             FROM news 
-            ORDER BY datNews ASC
+            ORDER BY datNews DESC
             LIMIT :nb'
     );
     $requete->bindValue(':nb',$nb,PDO::PARAM_INT);

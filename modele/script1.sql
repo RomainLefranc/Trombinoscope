@@ -2,14 +2,14 @@ CREATE DATABASE Trombi CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
 CREATE TABLE Sections (
-    codSec int NOT NULL AUTO_INCREMENT,
+    codSec varchar(20),
     libSec varchar(50),
     datDebSec date,
     obsvSec varchar(100),
     PRIMARY KEY(codSec)
 );
 CREATE TABLE Stagiaires (
-    codSec int NOT NULL,
+    codSec varchar(20),
     codSta int NOT NULL,
     nomSta varchar(25),
     preSta varchar( 25),

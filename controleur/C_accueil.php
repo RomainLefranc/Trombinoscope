@@ -12,12 +12,11 @@
     }
 
     if (isset($_POST["login"]) && isset($_POST["mdp"])) {
-        $login = $_POST["login"];
-        $mdp = $_POST["mdp"];
-        $test = Connexion($login,$mdp);
-        if ($test[0][0]) {
-            $_SESSION["user"] = $login;
-            $_SESSION['role'] = getRole($login);
+        $ConnexionEstValide = Connexion($_POST["login"],$_POST["mdp"]);
+        if ($ConnexionEstValide) {
+            $_SESSION["user"] = $_POST["login"];
+            $_SESSION['role'] = getRole($_POST["login"]);
+
             header ('location: index.php?action=T');
         } else {
             $_POST["erreur"] = 1;
