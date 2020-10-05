@@ -15,7 +15,7 @@ function verifAction() {
     }
 }
 function verifSessionAdmin() {
-    if ($_SESSION['user'] == "boss") {
+    if ($_SESSION['role'] == 1) {
         return true;
     } else {
         $view = "403";

@@ -1,8 +1,6 @@
 <?php
-function Connexion() {
+function Connexion($id,$mdp) {
     include "pdo.php";
-    $id = $_POST["login"];
-    $mdp = $_POST["mdp"];
     $requete = $pdo->prepare('
         SELECT IF((SELECT COUNT(*) FROM users WHERE log = :log AND pwd = :pwd ) > 0,TRUE, FALSE)'
     );
@@ -23,5 +21,16 @@ function getNews($nb) {
     $requete->execute();
     $resultat = $requete->fetchall();
     return $resultat;
+}
+function getRole($id) {
+    include "pdo.php";
+    $requete = $pdo->prepare('
+        SELECT rol 
+            FROM users
+            WHERE log = :log '
+    );
+    $requete->execute(['log' => $id]);
+    $resultat = $requete->fetchall();
+    return $resultat[0][0];
 }
 ?>
