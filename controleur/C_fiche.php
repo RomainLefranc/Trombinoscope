@@ -2,12 +2,15 @@
 include "modele/section_manager.php";
 include "modele/fiche_manager.php";
 if (verifSession() && verifSection() && verifStagiaire()) {
+
     $codSta = $_GET["stagiaire"];
     $codSec = $_GET["section"];
+
     $Section = getInfoSec($codSec);
     $nomSection = $Section["libSec"];
     $dateDebut = $Section["datDebSec"];
     $nbSta = $Section["cptSta"];
+
     $Stagiaire = getInfoSta($codSta);
     $prenomStagiaire = $Stagiaire["preSta"];
     $nomStagiaire = $Stagiaire["nomSta"];
@@ -22,6 +25,7 @@ if (verifSession() && verifSection() && verifStagiaire()) {
     $interne = $Stagiaire["interneSta"];
     $telephone = $Stagiaire["gsmSta"];
     $mail = $Stagiaire["mailSta"];
+
     $view = "fiche";
 }
 include "view/$view.php";

@@ -26,5 +26,6 @@ function getNbInitiale($initiale) {
     );
     $requete->execute(["initiale" => $initiale]);
     $resultat = $requete->fetchall();
-    return $resultat;}
+    return $resultat[0][0];
+}
 ?>

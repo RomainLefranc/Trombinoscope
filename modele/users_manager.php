@@ -6,7 +6,7 @@ function Connexion($id,$mdp) {
     );
     $requete->execute(['log' => $id,"pwd" => $mdp]);
     $resultat = $requete->fetchall();
-    return $resultat;
+    return $resultat[0][0];
 }
 function getNews($nb) {
 

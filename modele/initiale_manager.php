@@ -2,8 +2,8 @@
 function getInitiale($initiale) {
     include "pdo.php";
     $requete = $pdo->prepare('
-        SELECT Stagiaires.codSec AS codSecSta,codSta,nomSta,preSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS dateNaisSta
-            FROM Stagiaires INNER JOIN Sections ON Stagiaires.codSec = Sections.codSec
+        SELECT codSec,codSta,nomSta,preSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS dateNaisSta
+            FROM Stagiaires 
             WHERE LEFT(NomSta,1) = :initiale'
     );
     $requete->execute(["initiale" => $initiale]);
