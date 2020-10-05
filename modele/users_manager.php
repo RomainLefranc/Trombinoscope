@@ -4,7 +4,7 @@ function Connexion() {
     $id = $_POST["login"];
     $mdp = $_POST["mdp"];
     $requete = $pdo->prepare('
-        SELECT IF((SELECT COUNT(*) FROM users WHERE log = :log AND pwd = :pwd ) > 0,"TRUE", "FALSE")'
+        SELECT IF((SELECT COUNT(*) FROM users WHERE log = :log AND pwd = :pwd ) > 0,TRUE, FALSE)'
     );
     $requete->execute(['log' => $id,"pwd" => $mdp]);
     $resultat = $requete->fetchall();
@@ -13,8 +13,8 @@ function Connexion() {
 function getNews($nb) {
 
     include "pdo.php";
-    $requete = $pdo->prepare('
-        SELECT libNews 
+    $requete = $pdo->prepare(
+        'SELECT libNews 
             FROM news 
             ORDER BY datNews ASC
             LIMIT :nb'

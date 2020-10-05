@@ -32,7 +32,7 @@
         array(1,13,"Maïwenn","Rolland","21/11/2020","Osorno","non","02 03 78 46 33","Aliquam.ultrices.iaculis@tortor.ca"),
         array(1,14,"Margot","Chevallier","03/11/2016","Castiglione di Sicilia","oui","08 65 35 82 52","laoreet.ipsum.Curabitur@dolorelit.co.uk")
     ); */
-
+/* 
     $donneeNews = array (
         "La Covid a disparue",
         "Accident ravine des cabris, 2 blessés",
@@ -40,6 +40,6 @@
         "Une explosion à Paris ?!?",
         "Le debat fait rage pendant les elections présidentielle américaine",
         "Une fiat multipla de 1000 chevaux ??!"
-    )
+    ) */
 
 ?>

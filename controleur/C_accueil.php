@@ -7,11 +7,9 @@
     $donnee = "";
     $news = getNews(5);
     foreach ($news as $new) {
-        $donnee.= 
-        '
-        <li class="list-group-item">'.$new[0].'</li>
-        ' ;
+        $donnee.= '<li class="list-group-item">'.$new[0].'</li>';
     }
+    
     if (isset($_POST["login"]) && isset($_POST["mdp"])) {
         $login = $_POST["login"];
         $test = Connexion();

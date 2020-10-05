@@ -4,7 +4,9 @@ function getListeSec() {
     $requete = $pdo->prepare('
         SELECT codSec,libSec,
             (SELECT DATE_FORMAT(datDebSec,"%d/%m/%Y")), 
-            (SELECT COUNT(*) FROM Stagiaires WHERE Sections.codSec = Stagiaires.codSec) 
+            (SELECT COUNT(*) 
+                FROM Stagiaires 
+                WHERE Sections.codSec = Stagiaires.codSec) 
             FROM Sections'
     );
     $requete->execute();

@@ -6,8 +6,9 @@ function getInfoSec($codSec) {
         SELECT libSec,(SELECT DATE_FORMAT(datDebSec,"%d/%m/%Y")),
             (SELECT COUNT(*) 
                 FROM Stagiaires 
-                WHERE Sections.codSec = Stagiaires.codSec) FROM Sections 
-                    WHERE codSec = :codSec');
+                WHERE Sections.codSec = Stagiaires.codSec) 
+            FROM Sections 
+            WHERE codSec = :codSec');
     $requete->execute(["codSec" => $codSec]);
     $resultat = $requete->fetchall();
     return $resultat;
