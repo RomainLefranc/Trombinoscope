@@ -5,7 +5,7 @@ O : retourne un array
 I : /
 */
 function getListeSecTrombi() {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT codSec,libSec,
             (SELECT DATE_FORMAT(datDebSec,"%d/%m/%Y")) AS datDebSec, 
@@ -28,7 +28,7 @@ O : retourne un int
 I : l'initiale a rechercher
 */
 function getNbInitiale($initiale) {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT COUNT(*) 
             FROM Stagiaires 

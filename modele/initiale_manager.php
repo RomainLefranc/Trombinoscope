@@ -5,7 +5,7 @@ O : retourne un array
 I : intiale a rechercher 
 */
 function getListeStagiaireInitiale($initiale) {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT codSec,codSta,nomSta,preSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS dateNaisSta
             FROM Stagiaires 
@@ -23,7 +23,7 @@ I : /
 */
 function verifInitiale() {
     $initiale = $_GET["initiale"];
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('SELECT IF((SELECT COUNT(*) FROM Stagiaires WHERE LEFT(NomSta,1) = :initiale) > 0, TRUE, FALSE)'
     );
     $requete->execute(["initiale" => $initiale]);

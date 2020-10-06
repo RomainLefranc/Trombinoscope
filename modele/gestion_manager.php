@@ -5,7 +5,7 @@ O : retourne un array
 I : /
 */
 function getListeStagiaireGestion() {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT codSta,nomSta,preSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS datNaisSta,codSec
             FROM Stagiaires '

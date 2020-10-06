@@ -5,7 +5,7 @@ O : retourne un booléen
 I : l'identifiant et le mot de passe
 */
 function verifUserExiste($id,$mdp) {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT IF((SELECT COUNT(*) FROM users WHERE log = :log AND pwd = :pwd ) > 0,TRUE, FALSE)'
     );
@@ -20,7 +20,7 @@ O : retourne un array
 I : le nombre de news qu'on veut
 */
 function getNews($nb) {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare(
         'SELECT *
             FROM news 
@@ -38,7 +38,7 @@ O : retourne un entier
 I : l'identifiant de l'utilisateur
 */
 function getRoleUser($id) {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT rol 
             FROM users

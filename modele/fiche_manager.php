@@ -5,7 +5,7 @@ O : retourne un array
 I : le code de la section
 */
 function getInfoSec($codSec) {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT libSec,(SELECT DATE_FORMAT(datDebSec,"%d/%m/%Y")) AS datDebSec,
             (SELECT COUNT(*) 
@@ -24,7 +24,7 @@ O : retourne un array
 I : le code du stagiaire et le code de la section du stagiaire
 */
 function getInfoSta($codSta,$codSec) {
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('
         SELECT preSta,nomSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS datNaisSta,villeSta,interneSta,gsmSta,mailSta 
             FROM Stagiaires 
@@ -44,7 +44,7 @@ I : /
 function verifStagiaire() {
     $codSta = $_GET["stagiaire"];
     $codSec = $_GET["section"];
-    include "pdo.php";
+    include "data.php";
     $requete = $pdo->prepare('SELECT IF((SELECT COUNT(*) FROM Stagiaires WHERE codSta = :codSta AND codSec = :codSec) > 0, TRUE, FALSE)'
     );
     $requete->execute(["codSta" => $codSta, "codSec" => $codSec]);
