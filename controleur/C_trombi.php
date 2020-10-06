@@ -10,7 +10,6 @@ if (isset($_SESSION["user"])) {
             $disabled = "disabled";
         }
         $selectionInitiale.='<a class="btn btn-primary initiale '.$disabled.'" data-toggle="tooltip" data-placement="bottom" title="'.$cpt.'" href="index.php?action=I&initiale='.$i.'&page=1" role="button">'.$i.'</a>';
-
     }
     $donnee = "";
     $donneeSections = getListeSecTrombi();

@@ -7,7 +7,7 @@
         Date serveur : <?php echo $dateServeur." et il est ".$heureServeur ?></p>
       </div>
       <div class="col-lg-6 d-flex justify-content-center justify-content-sm-start justify-content-lg-end">
-      <img src="https://placehold.it/300x200" alt="A la une" class="rounded" >
+      <img src="media/alaUne/img.png" alt="A la une" class="rounded" >
       </div>
     </div>
   </div>

@@ -2,11 +2,11 @@
 if (isset($_SESSION["user"]) && verifSessionAdmin() && verifVue()) {
     switch ($_GET["vue"]) {
         case "new":
-            
-            break;
+            # code...
+        break;
         case 'read':
             # code...
-            break;
+        break;
         case 'update':
             # code...
             break;
