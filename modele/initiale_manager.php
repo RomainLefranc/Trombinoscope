@@ -1,4 +1,9 @@
 <?php
+/* 
+M : Recupere la liste de stagiaire ayant comme initiale la variable $initiale passé en parametre
+O : retourne un array
+I : intiale a rechercher 
+*/
 function getListeStagiaireInitiale($initiale) {
     include "pdo.php";
     $requete = $pdo->prepare('
@@ -10,6 +15,12 @@ function getListeStagiaireInitiale($initiale) {
     $resultat = $requete->fetchall();
     return $resultat;
 }
+
+/* 
+M : verifie que l'initiale renvoie au moins 1 reponse de la BDD
+O : retourne un booléen ou pas
+I : / 
+*/
 function verifInitiale() {
     $initiale = $_GET["initiale"];
     include "pdo.php";

@@ -2,29 +2,18 @@
 <?php
   if (isset($_GET["erreur"])) {
     if ($_GET["erreur"] == 3) {
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Erreur!</strong> Stagiaire invalide
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>';
+      $msgErreur = "Stagiaire";
     } elseif ($_GET["erreur"] == 1) {
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Erreur!</strong> Initiale invalide
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>';
+      $msgErreur = "Initiale";
     } elseif ($_GET["erreur"] == 2) {
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Erreur!</strong> Section invalide
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>';
-    } elseif ($_GET["erreur"] == 4) {
-      # code...
+      $msgErreur = "Section";
     }
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Erreur!</strong> '.$msgErreur.'
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>';
   }
 ?>
 <h3>Liste des sections</h3>
@@ -40,7 +29,7 @@
     </thead>
     <tbody>
       <?php
-      echo $donnee;
+      echo $html;
       ?>
     </tbody>
   </table>

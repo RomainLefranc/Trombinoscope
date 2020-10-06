@@ -6,20 +6,20 @@
     $dateServeur = strftime("%A %d %B %Y");
     $heureServeur = strftime("%H:%M");
 
-    /* Liste des news */
+    /* Preparation de l'HTML de la liste des 5 derniere news de la view accueil */
     $html = "";
     $listeNews = getNews(5);
     $target = new Datetime();
     foreach ($listeNews as $news) {
     $origin = new Datetime($news['datNews']);
     $interval = date_diff($origin, $target);
-
-        $html.= "<div class='card m-1' >
-                    <div class='card-body'>
-                        <h5 class='card-title'>".$interval->format('Il y a %a jours')."</h5>
-                        <h6 class='card-subtitle mb-2 text-muted'>".$news['libNews']."</h6>
-                    </div>
-                </div>";
+        $html.= "
+        <div class='card m-1' >
+            <div class='card-body'>
+                <h5 class='card-title'>".$interval->format('Il y a %a jours')."</h5>
+                <h6 class='card-subtitle mb-2 text-muted'>".$news['libNews']."</h6>
+            </div>
+        </div>";
     }
     
     /* Gestion de la connexion */

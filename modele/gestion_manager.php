@@ -1,4 +1,9 @@
 <?php
+/* 
+M : Recupere la liste de tout les stagiaires
+O : retourne un array
+I : /
+*/
 function getListeStagiaireGestion() {
     include "pdo.php";
     $requete = $pdo->prepare('

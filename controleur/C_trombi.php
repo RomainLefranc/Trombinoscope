@@ -1,7 +1,10 @@
 <?php
 if (isset($_SESSION["user"])) {
+
     include "modele/trombi_manager.php";
     $user = $_SESSION["user"];
+
+    /* Preparation de l'HTML de la zoneInitiale de la view Trombi */
     $selectionInitiale = "";
     foreach(range('A','Z') as $i) {
         $disabled = "";
@@ -11,14 +14,16 @@ if (isset($_SESSION["user"])) {
         }
         $selectionInitiale.='<a class="btn btn-primary initiale '.$disabled.'" data-toggle="tooltip" data-placement="bottom" title="'.$cpt.'" href="index.php?action=I&initiale='.$i.'&page=1" role="button">'.$i.'</a>';
     }
-    $donnee = "";
+
+    /* Preparation de l'HTML de la liste de section de la view trombi */
+    $html = "";
     $donneeSections = getListeSecTrombi();
     foreach ($donneeSections as $section) {
         $disabled = "";
         if ($section["cptSta"] == 0) {
             $disabled = "disabled";
         }
-        $donnee.= 
+        $html.= 
         '<tr>
             <th class="align-middle">'.$section["codSec"].'</th>
             <th class="align-middle">'.$section["libSec"].'</th>

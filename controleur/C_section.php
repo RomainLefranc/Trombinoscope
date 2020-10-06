@@ -3,8 +3,9 @@ include "modele/section_manager.php";
 if (isset($_SESSION["user"]) && verifSection()) {
     $codSec = $_GET["section"];
     $nomSection = getNomSec($codSec);
-    $html = "";
 
+    /* Preparation de l'HTML de la liste de stagiaire de la view section */
+    $html = "";
     $donneeStagiaire = getListeStagiaireSec($codSec);
     foreach ($donneeStagiaire as $stagiaire) {
         if ($stagiaire["interneSta"] == 0) {

@@ -1,5 +1,9 @@
 <?php
-
+/* 
+M : Recupere des informations sur une section
+O : retourne un array
+I : le code de la section
+*/
 function getInfoSec($codSec) {
     include "pdo.php";
     $requete = $pdo->prepare('
@@ -14,6 +18,11 @@ function getInfoSec($codSec) {
     return $resultat[0];
 }
 
+/* 
+M : Recupere des informations sur un stagiaire
+O : retourne un array
+I : le code du stagiaire et le code de la section du stagiaire
+*/
 function getInfoSta($codSta,$codSec) {
     include "pdo.php";
     $requete = $pdo->prepare('
@@ -25,6 +34,13 @@ function getInfoSta($codSta,$codSec) {
     $resultat = $requete->fetchall();
     return $resultat[0];
 }
+
+
+/* 
+M : verifie que le stagiaire existe dans la BDD
+O : retourne un booléen ou pas
+I : /
+*/
 function verifStagiaire() {
     $codSta = $_GET["stagiaire"];
     $codSec = $_GET["section"];

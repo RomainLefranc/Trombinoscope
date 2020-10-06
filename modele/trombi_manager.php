@@ -1,4 +1,9 @@
 <?php
+/* 
+M : Récupere la liste des sections
+O : retourne un array
+I : /
+*/
 function getListeSecTrombi() {
     include "pdo.php";
     $requete = $pdo->prepare('
@@ -17,6 +22,11 @@ function getListeSecTrombi() {
     return $resultat;
 }
 
+/* 
+M : Compte dans la base de données le nombre de Stagiaires ayant comme initiale de leur prenom la variable $initiale passsé en parametre
+O : retourne un int
+I : l'initiale a rechercher
+*/
 function getNbInitiale($initiale) {
     include "pdo.php";
     $requete = $pdo->prepare('

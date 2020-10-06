@@ -1,6 +1,7 @@
 <?php
 if (isset($_SESSION["user"]) && verifSessionAdmin()) {
     include "modele/gestion_manager.php";
+    
     /* Préparation du html pour la view  */
     $html = "";
     $listeStagiaires = getListeStagiaireGestion();

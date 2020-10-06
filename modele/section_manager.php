@@ -1,4 +1,10 @@
 <?php
+
+/* 
+M : Recupere le nom de la section
+O : retourne un string
+I : le code de la section 
+*/
 function getNomSec($codSec) {
     include "pdo.php";
     $requete = $pdo->prepare('SELECT libSec FROM Sections WHERE codSec= :codSec');
@@ -6,6 +12,12 @@ function getNomSec($codSec) {
     $resultat = $requete->fetchall();
     return $resultat[0][0];
 }
+
+/* 
+M : Récupere la liste de stagiaires dans une section
+O : retourne un array
+I : le code de la section 
+*/
 function getListeStagiaireSec($codSec) {
     include "pdo.php";
     $requete = $pdo->prepare('
@@ -17,6 +29,12 @@ function getListeStagiaireSec($codSec) {
     $resultat = $requete->fetchall();
     return $resultat;
 }
+
+/* 
+M : Verifie que la section existe dans la BDD
+O : retourne un booléen ou non
+I : /
+*/
 function verifSection() {
     include "pdo.php";
     $requete = $pdo->prepare('SELECT IF((SELECT COUNT(*) FROM Sections WHERE codSec = :codSec) > 0, TRUE, FALSE)');
