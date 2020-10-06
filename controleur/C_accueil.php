@@ -9,10 +9,19 @@
     /* Liste des news */
     $html = "";
     $listeNews = getNews(5);
+    $target = new Datetime();
     foreach ($listeNews as $news) {
-        $html.= '<li class="list-group-item">'.$news[0].'</li>';
-    }
+    $origin = new Datetime($news['datNews']);
+    $interval = date_diff($origin, $target);
 
+        $html.= "<div class='card m-1' >
+                    <div class='card-body'>
+                        <h5 class='card-title'>".$interval->format('Il y a %a jours')."</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>".$news['libNews']."</h6>
+                    </div>
+                </div>";
+    }
+    
     /* Gestion de la connexion */
     if (isset($_POST["login"]) && isset($_POST["mdp"])) {
         $login = $_POST["login"];

@@ -12,7 +12,7 @@ function verifUserExiste($id,$mdp) {
 function getNews($nb) {
     include "pdo.php";
     $requete = $pdo->prepare(
-        'SELECT libNews 
+        'SELECT *
             FROM news 
             ORDER BY datNews DESC
             LIMIT :nb'

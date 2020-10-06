@@ -14,7 +14,7 @@ if (isset($_SESSION["user"]) && verifInitiale()) {
                 <th class="align-middle " >'.$stagiaire["nomSta"].'</th>
                 <th class="align-middle " >'.$stagiaire["preSta"].'</th>
                 <th class="align-middle " >'.$stagiaire["dateNaisSta"].'</th>
-                <th class="align-middle " ><img src="https://via.placeholder.com/100x100.png?text='.$stagiaire["nomSta"].'" alt="">
+                <th class="align-middle " ><img src="media/stagiaires/sect'.$stagiaire["codSec"].'_'.$stagiaire["codSta"].'.png" alt="">
                 <th class="align-middle " ><a class="btn btn-primary" href="index.php?action=F&stagiaire='.$stagiaire["codSta"].'&section='.$stagiaire["codSec"].'" role="button"><i class="fas fa-eye"></i></a></th>
             </tr>
             ';

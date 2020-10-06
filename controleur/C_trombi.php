@@ -25,7 +25,7 @@ if (isset($_SESSION["user"])) {
             <th class="align-middle">'.$section["libSec"].'</th>
             <th class="align-middle">'.$section["datDebSec"].'</th>
             <th class="align-middle">'.$section["cptSta"].'</th>
-            <th class="align-middle"><img class="img-fluid"src="https://via.placeholder.com/100x100.png?text='.$section["libSec"].'" alt="">
+            <th class="align-middle"><img class="img-fluid"src="media/sections/sect'.$section["codSec"].'.png">
             <th class="align-middle "><a class="btn btn-primary '.$disabled.'" href="index.php?action=S&section='.$section["codSec"].'" role="button"><i class="fas fa-eye"></i></a></th>
         </tr>';
     }

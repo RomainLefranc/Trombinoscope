@@ -56,7 +56,7 @@
         <div class="col-3 d-flex justify-content-center align-items-center">
             <div class="">
                 <?php
-                    echo '<img class="img-fluid" src="https://via.placeholder.com/200x200.png?text='.$nomSection.'" alt="">'
+                    echo '<img class="img-fluid" src="media/sections/sect'.$codSec.'.png" alt="">'
                 ?>
             </div>
         </div>
@@ -100,7 +100,7 @@
         <div class="col-3 d-flex  justify-content-center align-items-center">
             <div class="">
                 <?php
-                    echo '<img class="img-fluid" src="https://via.placeholder.com/200x300.png?text='.$nomStagiaire.'" alt="">'
+                    echo '<img class="img-fluid w-100" src="media/stagiaires/sect'.$codSec.'_'.$codSta.'.png" alt="">'
                 ?>
             </div>
         </div>
