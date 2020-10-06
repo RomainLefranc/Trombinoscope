@@ -1,5 +1,5 @@
 <?php
-if (verifSession() && verifSessionAdmin() && verifVue()) {
+if (isset($_SESSION["user"]) && verifSessionAdmin() && verifVue()) {
     switch ($_GET["vue"]) {
         case "new":
             
@@ -14,7 +14,8 @@ if (verifSession() && verifSessionAdmin() && verifVue()) {
             header("location: index.php?action=L&erreur=1");
             break;
     }
-
-    include "view/$view.php";
+} else {
+    $view = "403";
 }
+include "view/$view.php";
 ?>

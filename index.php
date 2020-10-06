@@ -27,9 +27,9 @@
 } else {
     header("location: index.php?action=A");
 } */
-include "controleur/controleur.php";
 session_start();
 include "modele/data.php";
+include "controleur/controleur.php";
 $pages = array (["A","accueil"],["T","trombi"],["S","section"],["I","initiale"],["F","fiche"],["D","deconnexion"],["L","gestion"],["C","cru"]);
 $controlExiste = false;
 if (verifAction()) {

@@ -1,5 +1,5 @@
 <?php
-function Connexion($id,$mdp) {
+function verifUserExiste($id,$mdp) {
     include "pdo.php";
     $requete = $pdo->prepare('
         SELECT IF((SELECT COUNT(*) FROM users WHERE log = :log AND pwd = :pwd ) > 0,TRUE, FALSE)'
@@ -8,8 +8,8 @@ function Connexion($id,$mdp) {
     $resultat = $requete->fetchall();
     return $resultat[0][0];
 }
-function getNews($nb) {
 
+function getNews($nb) {
     include "pdo.php";
     $requete = $pdo->prepare(
         'SELECT libNews 
@@ -22,7 +22,8 @@ function getNews($nb) {
     $resultat = $requete->fetchall();
     return $resultat;
 }
-function getRole($id) {
+
+function getRoleUser($id) {
     include "pdo.php";
     $requete = $pdo->prepare('
         SELECT rol 

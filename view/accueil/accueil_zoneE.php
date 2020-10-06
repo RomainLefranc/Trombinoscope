@@ -5,7 +5,7 @@
             <h4 class="card-title">5 Derniere news</h4>
             <ul class="list-group">
                 <?php
-                    echo $donnee;
+                    echo $html;
                 ?>
             </ul>
         </div>

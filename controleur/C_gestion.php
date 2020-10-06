@@ -1,10 +1,11 @@
 <?php
-if (verifSession() && verifSessionAdmin()) {
+if (isset($_SESSION["user"]) && verifSessionAdmin()) {
     include "modele/gestion_manager.php";
-    $donnee = "";
-    $listeStagiaire = getStagiaire();
-    foreach ($listeStagiaire as $stagiaire) {
-        $donnee.= '
+    /* Préparation du html pour la view  */
+    $html = "";
+    $listeStagiaires = getListeStagiaireGestion();
+    foreach ($listeStagiaires as $sstagiaire) {
+        $html.= '
         <tr>
             <th class="align-middle " >'.$stagiaire["codSec"].'</th>
             <th class="align-middle " >'.$stagiaire["codSta"].'</th>
@@ -19,10 +20,13 @@ if (verifSession() && verifSessionAdmin()) {
         </tr>
         ';
     }
-    if ($donnee == "") {
-        $donnee = "Aucun stagiaire dans cet section.";
+    if ($html == "") {
+        $html = "Aucun stagiaire dans cet section.";
     }
+
     $view = "gestion";
+} else {
+    $view = "403";
 }
 include "view/$view.php";
 ?>

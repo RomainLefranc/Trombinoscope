@@ -1,17 +1,17 @@
 <div class="container ">
     <H2>Info Sections</H2>
-    <div class="row d-flex align-items-center">
-        <div class="col-4">
-            <div class="form-group ">
+<!--     <div class="col-9">
+        <div class="col">
+            <div class="form-group">
                 <label for="codeSection">Code </label>
                 <input type="text" class="form-control" id="codeSection"  value="<?php echo $codSec ?>"disabled>
             </div>
-            <div class="form-group ">
+            <div class="form-group">
                 <label for="libelleSection">Libellé </label>
                 <input type="text" class="form-control"  id="libelleSection"  value="<?php echo $nomSection ?>"disabled>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col">
             <div class="form-group ">
                 <label for="dateDebut">Date debut formation </label>
                 <input type="text" class="form-control"  id="dateDebut"  value="<?php echo $dateDebut ?>"disabled>
@@ -21,7 +21,39 @@
                 <input type="text" class="form-control"  id="nbSta"  value="<?php echo $nbSta ?>"disabled>
             </div>
         </div>
-        <div class="col-4 d-flex justify-content-center align-items-center">
+    </div>
+    <div class="col-3 d-flex justify-content-center align-items-center">
+            <div class="">
+                <?php
+                    echo '<img class="img-fluid" src="https://via.placeholder.com/200x200.png?text='.$nomSection.'" alt="">'
+                ?>
+            </div>
+        </div> -->
+
+    <div class="row">
+        <div class="col-9 d-flex">
+            <div class="flex-fill pr-2">
+                <div class="form-group ">
+                    <label for="dateDebut">Date debut formation </label>
+                    <input type="text" class="form-control"  id="dateDebut"  value="<?php echo $dateDebut ?>"disabled>
+                </div>
+                <div class="form-group ">
+                    <label for="nbSta">Nombre de stagiaire </label>
+                    <input type="text" class="form-control"  id="nbSta"  value="<?php echo $nbSta ?>"disabled>
+                </div>
+            </div>
+            <div class="flex-fill ">
+                <div class="form-group ">
+                    <label for="codeSection">Code </label>
+                    <input type="text" class="form-control" id="codeSection"  value="<?php echo $codSec ?>"disabled>
+                </div>
+                <div class="form-group ">
+                    <label for="libelleSection">Libellé </label>
+                    <input type="text" class="form-control"  id="libelleSection"  value="<?php echo $nomSection ?>"disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 d-flex justify-content-center align-items-center">
             <div class="">
                 <?php
                     echo '<img class="img-fluid" src="https://via.placeholder.com/200x200.png?text='.$nomSection.'" alt="">'

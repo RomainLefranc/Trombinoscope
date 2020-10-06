@@ -14,14 +14,14 @@ function getInfoSec($codSec) {
     return $resultat[0];
 }
 
-function getInfoSta($codSta) {
+function getInfoSta($codSta,$codSec) {
     include "pdo.php";
     $requete = $pdo->prepare('
         SELECT preSta,nomSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS datNaisSta,villeSta,interneSta,gsmSta,mailSta 
             FROM Stagiaires 
-            WHERE codSta = :codSta'
+            WHERE codSta = :codSta AND codSec = :codSec'
     );
-    $requete->execute(["codSta" => $codSta]);
+    $requete->execute(["codSta" => $codSta, "codSec" => $codSec]);
     $resultat = $requete->fetchall();
     return $resultat[0];
 }

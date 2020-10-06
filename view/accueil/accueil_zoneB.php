@@ -1,6 +1,6 @@
 <div class="col-md-4 mb-5">
     <?php
-    if (verifSession()) {
+    if (isset($_SESSION["user"])) {
         $user = $_SESSION["user"];
         echo '
         

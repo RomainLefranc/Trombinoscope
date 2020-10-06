@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erreur</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Perso -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="row justify-content-center align-items-center vh-100 vw-100" id="main">

@@ -1,5 +1,5 @@
 <?php
-if (verifSession()) {
+if (isset($_SESSION["user"])) {
     include "modele/trombi_manager.php";
     $user = $_SESSION["user"];
     $selectionInitiale = "";
@@ -11,14 +11,9 @@ if (verifSession()) {
         }
         $selectionInitiale.='<a class="btn btn-primary initiale '.$disabled.'" data-toggle="tooltip" data-placement="bottom" title="'.$cpt.'" href="index.php?action=I&initiale='.$i.'&page=1" role="button">'.$i.'</a>';
 
-/*      $selectionInitiale.='
-            <form class ="inline-form" action="index.php?action=I" method="post">
-                <input type="hidden" value= "'.$i.'">
-                <input class="btn btn-primary initiale" '.$disabled.' data-toggle="tooltip" data-placement="bottom" title="'.$cpt[0][0].'" type="submit" value="'.$i.'">    
-            </form>'; */
     }
     $donnee = "";
-    $donneeSections = getListeSec();
+    $donneeSections = getListeSecTrombi();
     foreach ($donneeSections as $section) {
         $disabled = "";
         if ($section["cptSta"] == 0) {
@@ -35,6 +30,8 @@ if (verifSession()) {
         </tr>';
     }
     $view = "trombi";
+} else {
+    $view = "403";
 }
 include "view/$view.php";
 ?>

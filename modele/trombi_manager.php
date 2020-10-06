@@ -1,5 +1,5 @@
 <?php
-function getListeSec() {
+function getListeSecTrombi() {
     include "pdo.php";
     $requete = $pdo->prepare('
         SELECT codSec,libSec,
@@ -10,13 +10,13 @@ function getListeSec() {
             FROM Sections
             ORDER BY (SELECT COUNT(*) 
             FROM Stagiaires 
-            WHERE Sections.codSec = Stagiaires.codSec) DESC, libSec '
-            
+            WHERE Sections.codSec = Stagiaires.codSec) DESC, libSec '     
     );
     $requete->execute();
     $resultat = $requete->fetchall();
     return $resultat;
 }
+
 function getNbInitiale($initiale) {
     include "pdo.php";
     $requete = $pdo->prepare('

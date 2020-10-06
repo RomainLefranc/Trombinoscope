@@ -4,9 +4,9 @@ function getNomSec($codSec) {
     $requete = $pdo->prepare('SELECT libSec FROM Sections WHERE codSec= :codSec');
     $requete->execute(["codSec" => $codSec]);
     $resultat = $requete->fetchall();
-    return $resultat;
+    return $resultat[0][0];
 }
-function getStagiaire($codSec) {
+function getListeStagiaireSec($codSec) {
     include "pdo.php";
     $requete = $pdo->prepare('
         SELECT codSta,nomSta,preSta,interneSta 

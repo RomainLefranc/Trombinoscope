@@ -23,7 +23,7 @@ CREATE TABLE Stagiaires (
 );
 CREATE TABLE Users (
     log varchar(25) NOT NULL,
-    pwd varchar(25) NOT NULL,
+    pwd char(60) NOT NULL,
     rol int NOT NULL,
     PRIMARY KEY (log)
 );

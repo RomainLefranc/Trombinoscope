@@ -1,5 +1,5 @@
 <?php
-function getInitiale($initiale) {
+function getListeStagiaireInitiale($initiale) {
     include "pdo.php";
     $requete = $pdo->prepare('
         SELECT codSec,codSta,nomSta,preSta,(SELECT DATE_FORMAT(datNaisSta,"%d/%m/%Y")) AS dateNaisSta
@@ -17,11 +17,10 @@ function verifInitiale() {
     );
     $requete->execute(["initiale" => $initiale]);
     $resultat = $requete->fetchall();
-    if ($resultat[0][0] && strlen($_GET["initiale"]) == 1) {
+    if ($resultat[0][0]) {
         return true;
     } else {
         header("location: index.php?action=T&erreur=1");
     }
 }
-
 ?>
