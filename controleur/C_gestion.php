@@ -5,7 +5,7 @@ if (isset($_SESSION["user"]) && verifSessionAdmin()) {
     /* Préparation du html pour la view  */
     $html = "";
     $listeStagiaires = getListeStagiaireGestion();
-    foreach ($listeStagiaires as $sstagiaire) {
+    foreach ($listeStagiaires as $stagiaire) {
         $html.= '
         <tr>
             <th class="align-middle " >'.$stagiaire["codSec"].'</th>
